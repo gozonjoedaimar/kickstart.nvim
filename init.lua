@@ -230,6 +230,42 @@ vim.opt.rtp:prepend(lazypath)
 --
 -- NOTE: Here is where you install your plugins.
 require('lazy').setup({
+  -- Copilot chat
+  {
+    'CopilotC-Nvim/CopilotChat.nvim',
+    branch = 'canary',
+    dependencies = {
+      { 'nvim-lua/plenary.nvim' }, -- for curl, log wrapper
+    },
+    opts = {
+      show_help = 'yes', -- Show help text for CopilotChatInPlace, default: yes
+      debug = false, -- Enable or disable debug mode, the log file will be in ~/.local/state/nvim/CopilotChat.nvim.log
+      disable_extra_info = 'no', -- Disable extra information (e.g: system prompt) in the response.
+      language = 'English', -- Copilot answer language settings when using default prompts. Default language is English.
+      -- proxy = "socks5://127.0.0.1:3000", -- Proxies requests via https or socks.
+      -- temperature = 0.1,
+    },
+    build = function()
+      vim.notify "Please update the remote plugins by running ':UpdateRemotePlugins', then restart Neovim."
+    end,
+    window = {
+      layout = 'float',
+    },
+    keys = {
+      { '<leader>cce', '<cmd>CopilotChatExplain<cr>', desc = 'CopilotChat - Explain code' },
+      {
+        '<leader>ccq',
+        function()
+          local input = vim.fn.input 'Quick Chat: '
+          if input ~= '' then
+            require('CopilotChat').ask(input, { selection = require('CopilotChat.select').buffer })
+          end
+        end,
+        desc = 'CopilotChat - Quick chat',
+      },
+    },
+  },
+
   -- Github Copilot
   'github/copilot.vim',
 
@@ -290,6 +326,7 @@ require('lazy').setup({
       -- Document existing key chains
       require('which-key').register {
         ['<leader>c'] = { name = '[C]ode', _ = 'which_key_ignore' },
+        ['<leader>cc'] = { name = '[C]opilot [C]hat', _ = 'which_key_ignore' },
         ['<leader>d'] = { name = '[D]ocument', _ = 'which_key_ignore' },
         ['<leader>r'] = { name = '[R]ename', _ = 'which_key_ignore' },
         ['<leader>s'] = { name = '[S]earch', _ = 'which_key_ignore' },
