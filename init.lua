@@ -314,6 +314,16 @@ require('lazy').setup({
         changedelete = { text = '~' },
       },
     },
+    keys = {
+      { '<C-g>', '<cmd>Gitsigns preview_hunk<cr>', desc = 'Preview Changes' },
+      { '[c', '<cmd>Gitsigns prev_hunk<cr>', desc = 'Go to previous git [c]hange' },
+      { ']c', '<cmd>Gitsigns next_hunk<cr>', desc = 'Go to next git [c]hange' },
+      { '<leader>hs', '<cmd>Gitsigns stage_hunk<cr>', desc = 'Stage the current [h]unk' },
+      { '<leader>hu', '<cmd>Gitsigns undo_stage_hunk<cr>', desc = 'Unstage the current [h]unk' },
+      { '<leader>hr', '<cmd>Gitsigns reset_hunk<cr>', desc = 'Reset the current [h]unk' },
+      { '<leader>hp', '<cmd>Gitsigns preview_hunk<cr>', desc = 'Preview the current [h]unk' },
+      { '<leader>hb', '<cmd>Gitsigns blame_line<cr>', desc = '[B]lame the current line' },
+    },
   },
 
   -- NOTE: Plugins can also be configured to run Lua code when they are loaded.
@@ -342,6 +352,7 @@ require('lazy').setup({
         ['<leader>c'] = { name = '[C]ode', _ = 'which_key_ignore' },
         ['<leader>cc'] = { name = '[C]opilot [C]hat', _ = 'which_key_ignore' },
         ['<leader>d'] = { name = '[D]ocument', _ = 'which_key_ignore' },
+        ['<leader>h'] = { name = 'Git [H]unks', _ = 'which_key_ignore' },
         ['<leader>r'] = { name = '[R]ename', _ = 'which_key_ignore' },
         ['<leader>s'] = { name = '[S]earch', _ = 'which_key_ignore' },
         ['<leader>w'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
