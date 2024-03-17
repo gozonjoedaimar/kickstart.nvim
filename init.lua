@@ -316,8 +316,8 @@ require('lazy').setup({
     },
     keys = {
       { '<C-h>', '<cmd>Gitsigns preview_hunk<cr>', desc = 'Preview Changes' },
-      { '[c', '<cmd>Gitsigns prev_hunk<cr>', desc = 'Go to previous git [c]hange' },
-      { ']c', '<cmd>Gitsigns next_hunk<cr>', desc = 'Go to next git [c]hange' },
+      { '[h', '<cmd>Gitsigns prev_hunk<cr>', desc = 'Go to previous git c[h]ange' },
+      { ']h', '<cmd>Gitsigns next_hunk<cr>', desc = 'Go to next git c[h]ange' },
       { '<leader>hs', '<cmd>Gitsigns stage_hunk<cr>', desc = 'Stage the current [h]unk' },
       { '<leader>hu', '<cmd>Gitsigns undo_stage_hunk<cr>', desc = 'Unstage the current [h]unk' },
       { '<leader>hr', '<cmd>Gitsigns reset_hunk<cr>', desc = 'Reset the current [h]unk' },
