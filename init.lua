@@ -234,6 +234,7 @@ require('lazy').setup({
   {
     'nvim-neo-tree/neo-tree.nvim',
     branch = 'v3.x',
+    event = 'BufWinEnter',
     dependencies = {
       'nvim-lua/plenary.nvim',
       'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
@@ -248,6 +249,7 @@ require('lazy').setup({
   {
     'CopilotC-Nvim/CopilotChat.nvim',
     branch = 'canary',
+    event = 'BufWinEnter',
     dependencies = {
       { 'nvim-lua/plenary.nvim' }, -- for curl, log wrapper
     },
