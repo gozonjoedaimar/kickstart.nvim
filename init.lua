@@ -430,7 +430,25 @@ require('lazy').setup({
           -- ignore paterns
           file_ignore_patterns = { '.git', 'node_modules', 'vendor' },
         },
-        -- pickers = {}
+        pickers = {
+          find_files = {
+            hidden = true,
+            find_command = {
+              'rg',
+              '--files',
+              '--color=never',
+              '--no-heading',
+              '--line-number',
+              '--column',
+              '--smart-case',
+              '--hidden',
+              '--glob',
+              '!{.git/*,.svelte-kit/*,target/*,node_modules/*}',
+              '--path-separator',
+              '/',
+            },
+          },
+        },
         extensions = {
           ['ui-select'] = {
             require('telescope.themes').get_dropdown(),
