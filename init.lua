@@ -230,6 +230,14 @@ vim.opt.rtp:prepend(lazypath)
 --
 -- NOTE: Here is where you install your plugins.
 require('lazy').setup({
+  -- Neogen annotation
+  {
+    'danymat/neogen',
+    config = true,
+    -- Uncomment next line if you want to follow only stable versions
+    version = '*',
+    event = 'BufRead',
+  },
   -- Neo-tree
   {
     'nvim-neo-tree/neo-tree.nvim',
