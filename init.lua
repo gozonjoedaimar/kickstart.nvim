@@ -936,6 +936,7 @@ require('lazy').setup({
         'yaml',
         'css',
         'scss',
+        'jsdoc',
       },
       -- Autoinstall languages that are not installed
       auto_install = true,
