@@ -24,6 +24,7 @@ return {
       'WhoIsSethDaniel/mason-tool-installer.nvim',
 
       -- Useful status updates for LSP.
+      -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
       { 'j-hui/fidget.nvim', opts = {} },
 
       -- Allows extra capabilities provided by blink.cmp
@@ -221,6 +222,38 @@ return {
         -- ts_ls = {},
         --
 
+        intelephense = {},
+
+        ts_ls = {
+          init_options = {
+            plugins = {
+              {
+                name = '@vue/typescript-plugin',
+                location = '/home/ireply/.nvm/versions/node/v20.18.0/lib/node_modules/@vue/typescript-plugin',
+                languages = { 'javascript', 'typescript', 'vue' },
+              },
+            },
+          },
+          filetypes = {
+            'javascript',
+            'typescript',
+            'vue',
+          },
+        },
+
+        pylsp = {},
+
+        vue_ls = {
+          filetypes = { 'vue' },
+          init_options = {
+            typescript = {
+              tsdk = '/home/ireply/.nvm/versions/node/v20.18.0/lib/node_modules/typescript/lib',
+              -- Alternative location if installed as root:
+              -- tsdk = '/usr/local/lib/node_modules/typescript/lib'
+            },
+          },
+        },
+
         lua_ls = {
           -- cmd = { ... },
           -- filetypes = { ... },
@@ -253,6 +286,9 @@ return {
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
+        'css-lsp', -- CSS LSP
+        'astro-language-server', -- Astro LSP
+        'html',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
