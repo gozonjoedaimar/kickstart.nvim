@@ -29,6 +29,7 @@ return {
         ['<leader>s'] = { name = '[S]earch', _ = 'which_key_ignore' },
         ['<leader>w'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
         ['<leader>E'] = { name = 'File [E]xplorer', _ = 'which_key_ignore' },
+        ['<leader>l'] = { name = '[L]azyGit', _ = 'which_key_ignore' },
         -- Sub
         ['<leader>cc'] = { name = 'CopilotChat', _ = 'which_key_ignore' },
       }
