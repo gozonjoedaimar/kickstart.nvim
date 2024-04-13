@@ -30,6 +30,9 @@ return {
         { '<leader>t', group = '[T]oggle' },
         { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
         { '<leader>E', group = 'File [E]xplorer' },
+        ['<leader>E'] = { name = 'File [E]xplorer', _ = 'which_key_ignore' },
+        -- Sub
+        ['<leader>cc'] = { name = 'CopilotChat', _ = 'which_key_ignore' },
       }
     end,
   },
