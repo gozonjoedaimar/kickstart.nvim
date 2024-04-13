@@ -65,6 +65,7 @@ return {
         { '<leader>t', group = '[T]oggle' },
         { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
         { '<leader>cc', group = '[C]opilot[C]hat' },
+        { '<leader>l', group = '[L]azyGit/[L]aravel' },
       },
     },
   },
