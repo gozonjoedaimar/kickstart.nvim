@@ -225,6 +225,8 @@ return {
           root_dir = require('lspconfig.util').root_pattern('composer.json', '.git', '.env'),
         },
 
+        biome = {},
+
         lua_ls = {
           -- cmd = { ... },
           -- filetypes = { ... },
@@ -258,7 +260,8 @@ return {
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
         'intelephense',
-        'css-lsp'
+        'css-lsp',
+        'biome',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
