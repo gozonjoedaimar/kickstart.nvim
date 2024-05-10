@@ -173,7 +173,13 @@ return {
           root_dir = require('lspconfig.util').root_pattern('composer.json', '.git', '.env'),
         },
 
-        biome = {},
+        biome = {
+          root_dir = require('lspconfig.util').root_pattern('biome.toml', '.git', '.env'),
+        },
+
+        tsserver = {
+          root_dir = require('lspconfig.util').root_pattern('tsconfig.json', 'package.json', 'jsconfig.json', '.git'),
+        },
 
         lua_ls = {
           -- cmd = {...},
@@ -207,6 +213,7 @@ return {
         'intelephense',
         'css-lsp',
         'biome',
+        'typescript-language-server',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
