@@ -233,6 +233,8 @@ return {
           root_dir = require('lspconfig.util').root_pattern('tsconfig.json', 'package.json', 'jsconfig.json', '.git'),
         },
 
+        pylsp = {},
+
         lua_ls = {
           -- cmd = { ... },
           -- filetypes = { ... },
@@ -265,10 +267,11 @@ return {
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
-        'intelephense',
-        'css-lsp',
-        'biome',
-        'typescript-language-server',
+        'intelephense', -- PHP LSP
+        'css-lsp', -- CSS LSP
+        'biome', -- JS/TS formatter
+        'typescript-language-server', -- TS LSP
+        'python-lsp-server', -- Python LSP
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
