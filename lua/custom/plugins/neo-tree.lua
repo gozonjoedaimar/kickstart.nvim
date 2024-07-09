@@ -10,7 +10,7 @@ return {
   },
   keys = {
     { '<leader>Ex', '<cmd>Neotree toggle<cr>', desc = 'Toggle Neotree' },
-    { '<leader>Ef', '<cmd>Neotree reveal<cr>', desc = 'Reveal in Neotree' },
+    { '<leader>Ed', '<cmd>Neotree reveal<cr>', desc = 'Reveal in Neotree' },
   },
   config = function()
     require('neo-tree').setup {}
