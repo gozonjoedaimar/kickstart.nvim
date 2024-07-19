@@ -71,7 +71,4 @@ vim.cmd 'au BufRead,BufNewFile *.ejs set filetype=html'
 -- Default vim file explorer list style
 vim.cmd 'let g:netrw_liststyle = 3'
 
--- Nerd font
-vim.g.have_nerd_font = true
-
 -- vim: ts=2 sts=2 sw=2 et
