@@ -16,6 +16,8 @@ return {
   },
   -- See Commands section for default commands if you want to lazy load on them
   keys = {
+    -- :CopilotChatOpen
+    { '<leader>ccn', '<cmd>CopilotChatOpen<cr>', desc = 'CopilotChat - Open' },
     {
       '<leader>ccq',
       function()
