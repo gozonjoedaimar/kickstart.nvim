@@ -272,6 +272,7 @@ return {
         'biome', -- JS/TS formatter
         'typescript-language-server', -- TS LSP
         'python-lsp-server', -- Python LSP
+        'astro-language-server', -- Astro LSP
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
