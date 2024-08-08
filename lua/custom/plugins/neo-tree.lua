@@ -12,6 +12,18 @@ return {
     { '<leader>Ex', '<cmd>Neotree reveal<cr>', desc = 'Show/Reveal Neotree' },
   },
   config = function()
-    require('neo-tree').setup {}
+    require('neo-tree').setup {
+      event_handlers = {
+        {
+          event = 'file_open_requested',
+          handler = function()
+            -- auto close
+            -- vimc.cmd 'Neotree close'
+            -- OR
+            require('neo-tree.command').execute { action = 'close' }
+          end,
+        },
+      },
+    }
   end,
 }
