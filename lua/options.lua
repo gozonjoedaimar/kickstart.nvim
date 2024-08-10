@@ -67,6 +67,9 @@ vim.opt.scrolloff = 10
 -- Backspace behaviour
 vim.opt.backspace = 'indent,eol,start'
 
+--- termgui
+vim.opt.termguicolors = true
+
 -- Register ejs filetype
 vim.treesitter.language.register('html', { 'ejs' })
 vim.cmd 'au BufRead,BufNewFile *.ejs set filetype=html'
