@@ -181,7 +181,12 @@ return {
         --
 
         intelephense = {
+          filetypes = { 'php', 'blade' },
           root_dir = require('lspconfig.util').root_pattern('composer.json', '.git', '.env'),
+          settings = {
+            filetypes = { 'php', 'blade' },
+            files = { '**/*.php', '**/*.blade.php' },
+          },
         },
 
         biome = {
