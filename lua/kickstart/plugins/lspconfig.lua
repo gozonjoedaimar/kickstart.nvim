@@ -199,6 +199,10 @@ return {
 
         pylsp = {},
 
+        volar = {
+          filetypes = { 'vue' },
+        },
+
         lua_ls = {
           -- cmd = {...},
           -- filetypes = { ...},
