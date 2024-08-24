@@ -232,11 +232,7 @@ return {
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
-        'intelephense', -- PHP LSP
         'css-lsp', -- CSS LSP
-        'biome', -- JS/TS formatter
-        'typescript-language-server', -- TS LSP
-        'python-lsp-server', -- Python LSP
         'astro-language-server', -- Astro LSP
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
