@@ -29,6 +29,7 @@ return {
         additional_vim_regex_highlighting = { 'ruby' },
       },
       indent = { enable = true, disable = { 'ruby' } },
+      matchup = { enable = true },
     },
     config = function(_, opts)
       -- There are additional nvim-treesitter modules that you can use to interact
