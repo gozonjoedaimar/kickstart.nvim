@@ -231,11 +231,11 @@ return {
         },
 
         biome = {
-          root_dir = require('lspconfig.util').root_pattern('biome.toml', '.git', '.env'),
+          -- root_dir = require('lspconfig.util').root_pattern('.git', '.env'),
         },
 
         tsserver = {
-          root_dir = require('lspconfig.util').root_pattern('tsconfig.json', 'package.json', 'jsconfig.json', '.git'),
+          -- root_dir = require('lspconfig.util').root_pattern('tsconfig.json', 'package.json', 'jsconfig.json', '.git'),
         },
 
         pylsp = {},
