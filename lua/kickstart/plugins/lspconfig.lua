@@ -182,7 +182,7 @@ return {
 
         intelephense = {
           filetypes = { 'php', 'blade' },
-          root_dir = require('lspconfig.util').root_pattern('composer.json', '.git', '.env'),
+          -- root_dir = require('lspconfig.util').root_pattern('composer.json', '.git', '.env'),
           settings = {
             filetypes = { 'php', 'blade' },
             files = { '**/*.php', '**/*.blade.php' },
@@ -195,6 +195,20 @@ return {
 
         tsserver = {
           -- root_dir = require('lspconfig.util').root_pattern('tsconfig.json', 'package.json', 'jsconfig.json', '.git'),
+          init_options = {
+            plugins = {
+              {
+                name = '@vue/typescript-plugin',
+                location = '/home/ireply/.nvm/versions/node/v22.6.0/lib/node_modules/@vue/typescript-plugin',
+                languages = { 'javascript', 'typescript', 'vue' },
+              },
+            },
+          },
+          filetypes = {
+            'javascript',
+            'typescript',
+            'vue',
+          },
         },
 
         pylsp = {},
