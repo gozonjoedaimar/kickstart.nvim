@@ -2,7 +2,7 @@ return {
   { -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
-    main = 'nvim-treesitter.configs', -- Sets main module to use for opts
+    -- main = 'nvim-treesitter.configs', -- Sets main module to use for opts
     -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
     opts = {
       ensure_installed = {
@@ -18,6 +18,8 @@ return {
         'blade',
         'markdown_inline',
         'query',
+        'php',
+        'php_only',
       },
       -- Autoinstall languages that are not installed
       auto_install = true,
@@ -56,6 +58,8 @@ return {
           au BufNewFile,BufRead *.blade.php set ft=blade
         augroup END
       ]]
+
+      require('nvim-treesitter.configs').setup(opts)
     end,
   },
 }
