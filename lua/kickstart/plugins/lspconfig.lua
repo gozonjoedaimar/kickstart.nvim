@@ -215,6 +215,13 @@ return {
 
         volar = {
           filetypes = { 'vue' },
+          init_options = {
+            typescript = {
+              tsdk = '/home/ireply/.nvm/versions/node/v22.6.0/lib/node_modules/typescript/lib',
+              -- Alternative location if installed as root:
+              -- tsdk = '/usr/local/lib/node_modules/typescript/lib'
+            },
+          },
         },
 
         lua_ls = {
