@@ -53,11 +53,11 @@ return {
         filetype = 'blade',
       }
 
-      vim.cmd [[
-        augroup BladeFiltypeRelated
-          au BufNewFile,BufRead *.blade.php set ft=blade
-        augroup END
-      ]]
+      vim.filetype.add {
+        pattern = {
+          ['.*%.blade%.php'] = 'blade',
+        },
+      }
 
       require('nvim-treesitter.configs').setup(opts)
     end,
