@@ -74,8 +74,11 @@ vim.opt.backspace = 'indent,eol,start'
 vim.opt.termguicolors = true
 
 -- Register ejs filetype
+vim.api.nvim_create_autocmd({ 'BufRead', 'BufNewFile' }, {
+  pattern = '*.ejs',
+  command = 'set filetype=html',
+})
 vim.treesitter.language.register('html', { 'ejs' })
-vim.cmd 'au BufRead,BufNewFile *.ejs set filetype=html'
 
 -- Default vim file explorer list style
 vim.cmd 'let g:netrw_liststyle = 3'
