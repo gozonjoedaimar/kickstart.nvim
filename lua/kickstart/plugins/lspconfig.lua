@@ -24,7 +24,8 @@ return {
       'WhoIsSethDaniel/mason-tool-installer.nvim',
 
       -- Useful status updates for LSP.
-      { 'j-hui/fidget.nvim', opts = {} },
+      -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
+      { 'j-hui/fidget.nvim',       opts = {} },
 
       -- Allows extra capabilities provided by blink.cmp
       'saghen/blink.cmp',
@@ -221,21 +222,9 @@ return {
         -- ts_ls = {},
         --
 
-        intelephense = {
-          filetypes = { 'php', 'blade' },
-          -- root_dir = require('lspconfig.util').root_pattern('composer.json', '.git', '.env'),
-          settings = {
-            filetypes = { 'php', 'blade' },
-            files = { '**/*.php', '**/*.blade.php' },
-          },
-        },
+        intelephense = {},
 
-        biome = {
-          -- root_dir = require('lspconfig.util').root_pattern('.git', '.env'),
-        },
-
-        tsserver = {
-          -- root_dir = require('lspconfig.util').root_pattern('tsconfig.json', 'package.json', 'jsconfig.json', '.git'),
+        ts_ls = {
           init_options = {
             plugins = {
               {
@@ -296,8 +285,8 @@ return {
       -- for you, so that they are available from within Neovim.
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
-        'stylua', -- Used to format Lua code
-        'css-lsp', -- CSS LSP
+        'stylua',                -- Used to format Lua code
+        'css-lsp',               -- CSS LSP
         'astro-language-server', -- Astro LSP
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
