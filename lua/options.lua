@@ -76,4 +76,11 @@ vim.opt.termguicolors = true
 -- Default vim file explorer list style
 vim.cmd 'let g:netrw_liststyle = 3'
 
+-- Set filetypes
+vim.filetype.add {
+  extension = {
+    ejs = 'embedded_template',
+  },
+}
+
 -- vim: ts=2 sts=2 sw=2 et
