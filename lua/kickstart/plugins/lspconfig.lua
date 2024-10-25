@@ -24,7 +24,7 @@ return {
 
       -- Useful status updates for LSP.
       -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-      { 'j-hui/fidget.nvim',       opts = {} },
+      { 'j-hui/fidget.nvim', opts = {} },
 
       -- Allows extra capabilities provided by nvim-cmp
       'hrsh7th/cmp-nvim-lsp',
@@ -187,7 +187,7 @@ return {
             plugins = {
               {
                 name = '@vue/typescript-plugin',
-                location = '/home/ireply/.nvm/versions/node/v22.6.0/lib/node_modules/@vue/typescript-plugin',
+                location = '/home/ireply/.nvm/versions/node/v20.18.0/lib/node_modules/@vue/typescript-plugin',
                 languages = { 'javascript', 'typescript', 'vue' },
               },
             },
@@ -205,7 +205,7 @@ return {
           filetypes = { 'vue' },
           init_options = {
             typescript = {
-              tsdk = '/home/ireply/.nvm/versions/node/v22.6.0/lib/node_modules/typescript/lib',
+              tsdk = '/home/ireply/.nvm/versions/node/v20.18.0/lib/node_modules/typescript/lib',
               -- Alternative location if installed as root:
               -- tsdk = '/usr/local/lib/node_modules/typescript/lib'
             },
@@ -240,9 +240,10 @@ return {
       -- for you, so that they are available from within Neovim.
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
-        'stylua',                -- Used to format Lua code
-        'css-lsp',               -- CSS LSP
+        'stylua', -- Used to format Lua code
+        'css-lsp', -- CSS LSP
         'astro-language-server', -- Astro LSP
+        'html',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
