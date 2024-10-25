@@ -21,6 +21,7 @@ return {
         'php',
         'php_only',
         'vue',
+        'embedded_template',
       },
       -- Autoinstall languages that are not installed
       auto_install = true,
