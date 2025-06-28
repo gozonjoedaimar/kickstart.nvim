@@ -39,6 +39,7 @@ return {
       require('nvim-treesitter.configs').setup(opts)
 
       -- install parsers
+      ---@class ParserInfo[]
       local parser_config = require('nvim-treesitter.parsers').get_parser_configs()
 
       parser_config.blade = {

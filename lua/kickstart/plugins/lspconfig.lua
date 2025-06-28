@@ -229,7 +229,7 @@ return {
             plugins = {
               {
                 name = '@vue/typescript-plugin',
-                location = '/home/ireply/.nvm/versions/node/v20.18.0/lib/node_modules/@vue/typescript-plugin',
+                location = os.getenv 'VUE_TS_PLUGIN',
                 languages = { 'javascript', 'typescript', 'vue' },
               },
             },
@@ -241,18 +241,11 @@ return {
           },
         },
 
-        pylsp = {},
-
         vue_ls = {
           filetypes = { 'vue' },
-          init_options = {
-            typescript = {
-              tsdk = '/home/ireply/.nvm/versions/node/v20.18.0/lib/node_modules/typescript/lib',
-              -- Alternative location if installed as root:
-              -- tsdk = '/usr/local/lib/node_modules/typescript/lib'
-            },
-          },
         },
+
+        pylsp = {},
 
         lua_ls = {
           -- cmd = { ... },
@@ -287,7 +280,6 @@ return {
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
         'css-lsp', -- CSS LSP
-        'astro-language-server', -- Astro LSP
         'html',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
